@@ -1,0 +1,14 @@
+---
+import Head from './Head.astro'
+const { title, description, image, data, robots } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<Head {title} {description} {image} {data} {robots} />
+	<body class="font-sans bg-white flex flex-col h-screen">
+		<main class="mt-20 flex-grow container mx-auto px-5 md:px-10">
+			<slot />
+		</main>
+	</body>
+</html>

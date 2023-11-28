@@ -1,0 +1,30 @@
+---
+// component imports
+import { SEO } from "astro-seo";
+
+const { title, description, image, data, robots } = Astro.props
+---
+
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script
+		type="text/partytown"
+		async
+		src=`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.GA_GTAG}`
+	></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || []
+		function gtag() {
+			dataLayer.push(arguments)
+		}
+		gtag('js', new Date())
+
+		gtag('config', `${import.meta.env.GA_GTAG}`)
+	</script>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content={Astro.generator} />
+	<meta name="description" content={description} />
+	<SEO title={`Nicolás Deyros | ${title}`} description={description} />
+</head>
