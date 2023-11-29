@@ -1,7 +1,13 @@
 ---
+import { Picture } from 'astro:assets';
 import Layout from '../layouts/index.astro'
 import ContactUs from '../components/Form/ContactUs'
+import myImage from "../assets/me.jpg";
+
 ---
-<Layout title='index'>
+<Layout title='Contact Us'>
+	<div class='flex items-center justify-center'>
+		<Picture src={myImage} formats={['avif', 'webp']} alt="nicolas deyros" />
+	</div>
 	<ContactUs client:load/>
 </Layout>

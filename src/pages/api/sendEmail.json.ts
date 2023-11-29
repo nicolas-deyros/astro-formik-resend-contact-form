@@ -39,7 +39,7 @@ export const POST: APIRoute = async ({ params, request }) => {
 			}),
 			{
 				status: 500,
-				statusText: 'Internal Server Error',
+				statusText: 'Internal Server Error papucho',
 			},
 		)
 	}

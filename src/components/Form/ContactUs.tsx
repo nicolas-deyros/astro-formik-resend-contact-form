@@ -13,11 +13,6 @@ const ContactUs = () => {
 	}
 
 	const handleSubmit = async (value, onSubmittingProps) => {
-		// const formData = new FormData(values.currentTarget)
-		// const { name, email, msg } = Object.fromEntries(formData)
-		const formData = new FormData()
-		const { name, email } = Object.fromEntries(formData)
-
 		try {
 			const res = await fetch('/api/sendEmail.json', {
 				method: 'POST',
@@ -25,20 +20,22 @@ const ContactUs = () => {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					from: 'ndeyros@gmail.com',
-					to: 'ndeyros@gmail.com',
-					subject: `Hi, prueba`,
-					html: 'hmtl',
-					text: 'hi text',
+					from: 'onboarding@resend.dev',
+					to: `${value.email}`,
+					subject: `Hi, ${value.name}`,
+					html: render(<SampleEmail userFirstname={value.name} />, {
+						pretty: true,
+					}),
+					text: render(<SampleEmail userFirstname={value.name} />, {
+						plainText: true,
+					}),
 				}),
 			})
 			if (!res.ok) {
-				// Handle error
 				console.error('An error occurred:', res.statusText)
 				return
 			}
 			const data = await res.json()
-			console.log(data)
 			onSubmittingProps.resetForm()
 		} catch (error) {
 			console.error(error)
@@ -52,7 +49,7 @@ const ContactUs = () => {
 	})
 
 	return (
-		<div className='w-full h-full flex flex-col items-center justify-center'>
+		<div className='w-full flex flex-col items-center justify-center'>
 			{formSubmit && (
 				<motion.h3
 					initial={{ scale: 0 }}

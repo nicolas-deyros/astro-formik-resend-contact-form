@@ -1,16 +1,8 @@
-# Astro Starter Kit: Minimal
+# Astro contact form using Formik, Yup, Resend, React Email and Tailwind
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Base on the video [(FINALLY!) Email for Developers](https://www.youtube.com/watch?v=HyDwVN1AFwY) from the Youtube channel [Coding in Public](https://www.youtube.com/@CodinginPublic)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
+## Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
@@ -18,18 +10,25 @@ Inside of your Astro project, you'll see the following folders and files:
 /
 ├── public/
 ├── src/
-│   └── pages/
+│   └── assets/
+│   └── components/
+│       └── emails/
+│           └── SampleEmail.tsx
+│       └── Form/
+│           └── ContactUs.tsx
+│   └── layouts/
+│       └── Head.astro
 │       └── index.astro
+│   └── pages/
+│       └── api/
+│           └── sendEmail.json.ts
+│       └── index.astro
+│   └── schemas/
+│       └── index.tsx
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -42,6 +41,31 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Dependencies
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This are all the dependencies use for this project
+
+```text
+  "@astrojs/check": "^0.3.1",
+  "@astrojs/node": "^6.1.0",
+  "@astrojs/partytown": "^2.0.2",
+  "@astrojs/prefetch": "^0.4.1",
+  "@astrojs/react": "^3.0.6",
+  "@astrojs/tailwind": "^5.0.2",
+  "@react-email/components": "^0.0.11",
+  "@react-email/render": "^0.0.9",
+  "@types/react": "^18.2.39",
+  "@types/react-dom": "^18.2.17",
+  "astro": "^3.6.1",
+  "astro-icon": "^0.8.1",
+  "astro-seo": "^0.8.0",
+  "formik": "^2.4.5",
+  "framer-motion": "^10.16.5",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-email": "^1.9.5",
+  "resend": "^2.0.0",
+  "tailwindcss": "^3.3.5",
+  "typescript": "^5.3.2",
+  "yup": "^1.3.2"
+```
