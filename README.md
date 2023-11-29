@@ -69,3 +69,7 @@ This are all the dependencies use for this project
   "typescript": "^5.3.2",
   "yup": "^1.3.2"
 ```
+
+## Environment Variables
+
+You need to setup the following environment variables in order for resend to work **RESEND_API_KEY=**. If you would like to add Google Analytics you will also need to use **GA_GTAG=**
