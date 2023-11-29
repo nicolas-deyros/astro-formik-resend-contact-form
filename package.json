@@ -16,6 +16,7 @@
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/react": "^3.0.6",
     "@astrojs/tailwind": "^5.0.2",
+    "@astrojs/vercel": "^5.2.0",
     "@react-email/components": "^0.0.11",
     "@react-email/render": "^0.0.9",
     "@types/react": "^18.2.39",
